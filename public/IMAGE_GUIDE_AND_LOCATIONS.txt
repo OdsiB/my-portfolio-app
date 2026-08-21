@@ -1,0 +1,57 @@
+# ==============================================================================
+# ODSEY BANDOJO - PORTFOLIO ASSET & IMAGE DIRECTORY MAP
+# ==============================================================================
+
+This directory is where you drop your original photos, project thumbnails, 
+graphic designs, and video files.
+
+--------------------------------------------------------------------------------
+📁 QUICK FOLDER OVERVIEW
+--------------------------------------------------------------------------------
+
+1. 📂 public/
+   └── profile.jpg                     <-- Your main profile photo (used in About & CV)
+
+2. 📂 public/images/profile/
+   └── profile.jpg                     <-- Alternative spot for profile photo
+
+3. 📂 public/images/selected-work/      <-- The 5 featured spotlight projects on homepage
+   ├── selected-01.jpg                 (Project 01: Short-Form Video // 4:5 Portrait)
+   ├── selected-02.jpg                 (Project 02: Promotional Content // 16:9 Landscape)
+   ├── selected-03.jpg                 (Project 03: Social Media Design // 1:1 Square)
+   ├── selected-04.jpg                 (Project 04: Poster / Layout // 4:5 Portrait)
+   └── selected-05.jpg                 (Project 05: Thesis Project // 16:9 Landscape)
+
+4. 📂 public/images/videos/             <-- Video project thumbnails in Motion/Video Archive
+   ├── video-01.jpg                    (01 Dynamic Shorts Edit // 9:16 Portrait)
+   ├── video-02.jpg                    (02 Brand Promotional Reel // 16:9 Landscape)
+   ├── video-03.jpg                    (03 Travel Diary / Story // 16:9 Landscape)
+   ├── video-04.jpg                    (04 Micro-Content Product // 9:16 Portrait)
+   ├── video-05.jpg                    (05 Commercial Campaign Spot // 16:9 Landscape)
+   └── video-06.jpg                    (06 Island Vistas Travel // 16:9 Landscape)
+
+5. 📂 public/images/graphics/           <-- Graphic design artwork in Graphic Archive
+   ├── graphic-01.jpg                  (01 Brand Social Post System // 1:1 Square)
+   ├── graphic-02.jpg                  (02 Marketing Promotions & Banners // 16:9 Landscape)
+   ├── graphic-03.jpg                  (03 Editorial Poster & Brochure // 4:5 Portrait)
+   ├── graphic-04.jpg                  (04 Digital Content Suite // 16:9 Landscape)
+   ├── graphic-05.jpg                  (05 Event Poster Series // 4:5 Portrait)
+   └── graphic-06.jpg                  (06 Carousel Storytelling // 1:1 Square)
+
+6. 📂 public/images/thesis/             <-- Thesis stages in Computer Engineering section
+   ├── thesis-01.jpg                   (Stage 01: Problem Framing & Architecture)
+   ├── thesis-02.jpg                   (Stage 02: Interface Layout & Components)
+   ├── thesis-03.jpg                   (Stage 03: Feedback Iteration & Polish)
+   └── thesis-04.jpg                   (Stage 04: Completed Prototype & Defense)
+
+7. 📂 public/videos/                    <-- Actual video playback files (.mp4 / .webm)
+   ├── shorts-01.mp4                   (Optional: plays inside modal for Video 01)
+   ├── promo-02.mp4                    (Optional: plays inside modal for Video 02)
+   └── travel-03.mp4                   (Optional: plays inside modal for Video 03)
+
+================================================================================
+💡 HOW IT WORKS:
+Simply drag and drop your image file into the corresponding folder and give it 
+the exact name listed above (or .png / .webp). The website will automatically 
+display your image instantly!
+================================================================================

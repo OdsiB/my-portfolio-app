@@ -97,7 +97,11 @@ export function ProjectModal({ project, onClose, onCursorChange }: ProjectModalP
                 /* Video Player Frame */
                 youtubeEmbedUrl ? (
                   /* YouTube Embed Player with Custom Thumbnail Cover */
-                  <div className="relative aspect-[16/9] w-full bg-black flex items-center justify-center overflow-hidden group">
+                  <div className={`relative w-full bg-black flex items-center justify-center overflow-hidden group ${
+                    project.aspectRatio === 'portrait'
+                      ? 'aspect-[9/16] max-h-[72vh] max-w-[390px] mx-auto shadow-2xl rounded-sm'
+                      : 'aspect-[16/9]'
+                  }`}>
                     {hasStartedVideo ? (
                       <iframe
                         src={youtubeEmbedUrl}
@@ -117,7 +121,7 @@ export function ProjectModal({ project, onClose, onCursorChange }: ProjectModalP
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/50 flex flex-col justify-between p-6">
                           <div className="flex items-center justify-between text-[10px] font-bold tracking-widest text-white">
                             <span className="bg-white/10 px-2.5 py-1 uppercase backdrop-blur-xs border border-white/20 font-mono">
-                              YOUTUBE VIDEO
+                              {project.aspectRatio === 'portrait' ? 'YOUTUBE SHORTS' : 'YOUTUBE VIDEO'}
                             </span>
                             <span className="font-bold font-mono">
                               {(project as VideoProject).duration || 'HD 1080P'}
@@ -147,12 +151,13 @@ export function ProjectModal({ project, onClose, onCursorChange }: ProjectModalP
                   </div>
                 ) : isDirectVideo && videoUrl ? (
                   /* Direct HTML5 MP4/WebM Video Player */
-                  <div className="relative aspect-[16/9] w-full bg-black flex items-center justify-center">
+                  <div className={`relative w-full bg-black flex items-center justify-center ${project.aspectRatio === 'portrait' ? 'max-h-[70vh] py-2' : 'aspect-[16/9]'}`}>
                     <video
                       src={videoUrl}
                       controls
                       autoPlay
-                      className="w-full h-full object-contain"
+                      playsInline
+                      className={`max-w-full ${project.aspectRatio === 'portrait' ? 'h-[65vh] max-h-[600px] aspect-[9/16] object-contain shadow-2xl rounded-sm' : 'w-full h-full object-contain'}`}
                     />
                   </div>
                 ) : isInProduction ? (

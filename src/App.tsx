@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { CustomCursor } from './components/CustomCursor';
+import { LiveBackground } from './components/LiveBackground';
+import { StartupIntro } from './components/StartupIntro';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Statement } from './components/Statement';
@@ -19,6 +21,7 @@ import { Toast } from './components/Toast';
 import { BaseProject, VideoProject, GraphicProject, SelectedProject, ThesisStage } from './types';
 
 export default function App() {
+  const [hasIntroCompleted, setHasIntroCompleted] = useState<boolean>(false);
   const [cursorMode, setCursorMode] = useState<'default' | 'view' | 'play' | 'open' | 'drag'>('default');
   const [cursorText, setCursorText] = useState<string>('');
   const [selectedProject, setSelectedProject] = useState<BaseProject | VideoProject | GraphicProject | SelectedProject | null>(null);
@@ -57,15 +60,26 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] selection:bg-[var(--selection-bg)] selection:text-[var(--selection-text)] relative transition-colors duration-300">
+      <div className="min-h-screen bg-transparent text-[var(--text-primary)] selection:bg-[var(--selection-bg)] selection:text-[var(--selection-text)] relative transition-colors duration-300">
+        {/* Startup Handwriting Cursive Intro Animation */}
+        {!hasIntroCompleted && (
+          <StartupIntro
+            onComplete={() => setHasIntroCompleted(true)}
+            onCursorChange={handleCursorChange}
+          />
+        )}
+
         {/* Custom Desktop Mouse Cursor */}
         <CustomCursor cursorMode={cursorMode} cursorText={cursorText} />
+
+        {/* Live Ambient Fluid Gradient Background */}
+        <LiveBackground />
 
         {/* Sticky Minimal Navigation */}
         <Navbar onCursorChange={handleCursorChange} />
 
         {/* Main Page Sections */}
-        <main id="main-content">
+        <main id="main-content" className="relative z-10">
           <Hero onCursorChange={handleCursorChange} />
           
           <Statement onCursorChange={handleCursorChange} />

@@ -22,24 +22,24 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
   return (
     <section
       id="motion-video"
-      className="py-16 sm:py-24 lg:py-28 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto border-b border-[var(--border-color)]"
+      className="py-14 sm:py-20 lg:py-28 px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto border-b border-[var(--border-color)]"
     >
       {/* Header & Filter Controls */}
-      <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 sm:mb-16 gap-6 border-b border-[var(--border-color)] pb-6">
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-16 gap-5 sm:gap-6 border-b border-[var(--border-color)] pb-5 sm:pb-6">
         <div>
-          <h2 className="text-[10px] font-bold tracking-[0.3em] uppercase text-[var(--text-faint)] italic mb-3">
+          <h2 className="text-[10px] font-bold tracking-[0.3em] uppercase text-[var(--text-faint)] italic mb-2 sm:mb-3">
             03 / Archive 01
           </h2>
           <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[var(--text-primary)] uppercase">
             Motion / Video
           </h3>
-          <p className="text-[11px] sm:text-xs font-medium text-[var(--text-muted)] tracking-widest uppercase mt-2">
+          <p className="text-[10px] sm:text-xs font-medium text-[var(--text-muted)] tracking-widest uppercase mt-1.5 sm:mt-2">
             Focused on short-form pacing, promotional storytelling, and cinematic travel edits.
           </p>
         </div>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 max-w-full no-scrollbar">
           {categories.map((cat) => {
             const isActive = activeFilter === cat;
             return (
@@ -49,7 +49,7 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
                 onClick={() => setActiveFilter(cat)}
                 onMouseEnter={() => onCursorChange('open', cat)}
                 onMouseLeave={() => onCursorChange('default')}
-                className={`px-3.5 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase transition-all border cursor-pointer ${
+                className={`px-3 sm:px-3.5 py-1.5 text-[9px] sm:text-[10px] font-bold tracking-[0.18em] uppercase transition-all border cursor-pointer shrink-0 min-h-[36px] sm:min-h-[32px] flex items-center justify-center ${
                   isActive
                     ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] border-[var(--btn-primary-bg)] shadow-xs'
                     : 'bg-transparent text-[var(--text-muted)] border-[var(--border-color)] hover:border-[var(--color-accent)] hover:text-[var(--text-primary)]'
@@ -65,7 +65,7 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
       {/* Video Projects Grid */}
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8"
       >
         <AnimatePresence mode="popLayout">
           {filteredVideos.map((video) => {
@@ -95,7 +95,7 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
                   <div
                     className={`overflow-hidden relative ${
                       video.aspectRatio === 'portrait'
-                        ? 'aspect-[9/16] sm:aspect-[3/4]'
+                        ? 'aspect-[4/5] sm:aspect-[3/4]'
                         : 'aspect-[16/9]'
                     }`}
                   >
@@ -108,8 +108,8 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
 
                     {/* Top Status Badge for In-Production / Empty Slots */}
                     {isInProduction && (
-                      <div className="absolute top-3 left-3 z-10">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-black/80 border border-[var(--color-accent)]/80 text-[var(--color-accent)] text-[9px] font-mono font-black uppercase tracking-wider backdrop-blur-md shadow-lg">
+                      <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 z-10">
+                        <span className="inline-flex items-center gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 bg-black/80 border border-[var(--color-accent)]/80 text-[var(--color-accent)] text-[8px] sm:text-[9px] font-mono font-black uppercase tracking-wider backdrop-blur-md shadow-lg">
                           <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
                           IN PRODUCTION
                         </span>
@@ -118,17 +118,17 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
 
                     {/* Play / Brief Overlay */}
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                      <div className="w-12 h-12 bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
+                      <div className="w-11 sm:w-12 h-11 sm:h-12 bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-200">
                         {hasPlayableVideo ? (
-                          <Play className="w-5 h-5 fill-current ml-0.5" />
+                          <Play className="w-4 sm:w-5 h-4 sm:h-5 fill-current ml-0.5" />
                         ) : (
-                          <Film className="w-5 h-5" />
+                          <Film className="w-4 sm:w-5 h-4 sm:h-5" />
                         )}
                       </div>
                     </div>
 
                     {/* Badges */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[9px] font-bold tracking-widest text-[var(--text-primary)] z-10">
+                    <div className="absolute bottom-2.5 sm:bottom-3 left-2.5 sm:left-3 right-2.5 sm:right-3 flex items-center justify-between text-[8.5px] sm:text-[9px] font-bold tracking-widest text-[var(--text-primary)] z-10">
                       <span className="bg-[var(--bg-canvas)]/90 border border-[var(--border-color)] px-2 py-0.5 uppercase backdrop-blur-xs font-mono">
                         {video.videoCategory}
                       </span>
@@ -147,29 +147,29 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
                 </div>
 
                 {/* Video Info */}
-                <div className="pt-4 space-y-2 flex-1 flex flex-col justify-between">
+                <div className="pt-3.5 sm:pt-4 space-y-2 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center justify-between font-mono text-[10px] text-[var(--text-faint)] mb-1">
+                    <div className="flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-[var(--text-faint)] mb-1">
                       <span className="font-bold text-[var(--text-primary)]">{video.number}</span>
                       <span>{video.year}</span>
                     </div>
                     <h4
                       onClick={() => onSelectVideo(video)}
-                      className="text-base font-black text-[var(--text-primary)] uppercase tracking-tight group-hover:text-[var(--color-accent)] transition-colors cursor-pointer"
+                      className="text-sm sm:text-base font-black text-[var(--text-primary)] uppercase tracking-tight group-hover:text-[var(--color-accent)] transition-colors cursor-pointer"
                     >
                       {video.title}
                     </h4>
-                    <p className="text-xs text-[var(--text-muted)] line-clamp-2 mt-1 leading-relaxed font-medium uppercase tracking-wider">
+                    <p className="text-[11px] sm:text-xs text-[var(--text-muted)] line-clamp-2 mt-1 leading-relaxed font-medium uppercase tracking-wider">
                       {video.description}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[var(--border-color)] flex items-center justify-between">
+                  <div className="pt-2.5 sm:pt-3 border-t border-[var(--border-color)] flex items-center justify-between">
                     <div className="flex flex-wrap gap-1">
                       {video.tools?.map((tool) => (
                         <span
                           key={tool}
-                          className="text-[9px] font-bold text-[var(--text-muted)] uppercase tracking-wider font-mono"
+                          className="text-[8.5px] sm:text-[9px] font-bold text-[var(--text-muted)] uppercase tracking-wider font-mono"
                         >
                           {tool}
                         </span>
@@ -179,7 +179,7 @@ export function MotionVideoSection({ onSelectVideo, onCursorChange }: MotionVide
                       onClick={() => onSelectVideo(video)}
                       onMouseEnter={() => onCursorChange(hasPlayableVideo ? 'play' : 'open', hasPlayableVideo ? 'PLAY' : 'BRIEF')}
                       onMouseLeave={() => onCursorChange('default')}
-                      className="text-[10px] font-bold text-[var(--text-primary)] hover:text-[var(--color-accent)] uppercase flex items-center gap-1 border-b border-[var(--border-color)] hover:border-[var(--color-accent)] cursor-pointer"
+                      className="text-[9.5px] sm:text-[10px] font-bold text-[var(--text-primary)] hover:text-[var(--color-accent)] uppercase flex items-center gap-1 border-b border-[var(--border-color)] hover:border-[var(--color-accent)] cursor-pointer py-0.5"
                     >
                       <span>{hasPlayableVideo ? 'PLAY' : 'VIEW BRIEF'}</span>
                       <span>→</span>

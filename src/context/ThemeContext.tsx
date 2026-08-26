@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type ThemeMode = 'black-blue' | 'white-blue' | 'editorial';
+export type ThemeMode = 'black-blue' | 'black-red' | 'black-teal' | 'black-white' | 'editorial';
 
 interface ThemeContextType {
   theme: ThemeMode;
@@ -15,14 +15,20 @@ const STORAGE_KEY = 'odsey_portfolio_theme';
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === 'black-blue' || saved === 'white-blue' || saved === 'editorial') {
+      const saved = localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
+      if (
+        saved === 'black-blue' ||
+        saved === 'black-red' ||
+        saved === 'black-teal' ||
+        saved === 'black-white' ||
+        saved === 'editorial'
+      ) {
         return saved;
       }
     } catch {
       // Fallback
     }
-    // Default to the requested Black, White & Cobalt Blue theme
+    // Default to the Black + Blue theme
     return 'black-blue';
   });
 
@@ -41,8 +47,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const cycleTheme = () => {
     setThemeState((prev) => {
-      if (prev === 'black-blue') return 'white-blue';
-      if (prev === 'white-blue') return 'editorial';
+      if (prev === 'black-blue') return 'black-red';
+      if (prev === 'black-red') return 'black-teal';
+      if (prev === 'black-teal') return 'black-white';
+      if (prev === 'black-white') return 'editorial';
       return 'black-blue';
     });
   };

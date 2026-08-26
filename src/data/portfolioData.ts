@@ -225,6 +225,30 @@ export const VIDEO_PROJECTS: VideoProject[] = [
       'Asset slot reserved — video deliverable in active editing pipeline',
     ],
   },
+  {
+    id: 'vid-04',
+    number: '04',
+    title: 'KINETIC TYPOGRAPHY',
+    category: 'Motion / Video',
+    videoCategory: 'SHORTS',
+    year: '2026',
+    duration: '0:30',
+    aspectRatio: 'portrait',
+    // YouTube Shorts link and auto-thumbnail
+    videoUrl: 'https://youtube.com/shorts/Iu8PS1s3Nz0',
+    description:
+      'Timed dynamic font pairings to mirror the emotional pacing of the vocal track using glowing motion-tracked text layers.',
+    tools: ['DaVinci Resolve'],
+    role: 'Motion Designer & Video Editor',
+    focus: 'Kinetic Typography & Audio-Reactive Pacing',
+    thumbnail: 'https://img.youtube.com/vi/Iu8PS1s3Nz0/maxresdefault.jpg',
+    fallbackPoster: createEditorialPoster('KINETIC TYPOGRAPHY', 'Motion & Lyrics', '2026', '#2563EB', 'video', 'portrait'),
+    details: [
+      'Timed dynamic font pairings to mirror the emotional pacing of the vocal track using glowing motion-tracked text layers',
+      'Audio-reactive text animations and glowing kinetic typography layers',
+      'Edited, paced, and styled exclusively in DaVinci Resolve',
+    ],
+  },
 ];
 
 /**

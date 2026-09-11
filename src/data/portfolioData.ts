@@ -249,6 +249,52 @@ export const VIDEO_PROJECTS: VideoProject[] = [
       'Edited, paced, and styled exclusively in DaVinci Resolve',
     ],
   },
+  {
+    id: 'vid-05',
+    number: '05',
+    title: "RANKING SPEED'S FUNNIEST APPLE EVENT MOMENTS",
+    category: 'Motion / Video',
+    videoCategory: 'SHORTS',
+    year: '2026',
+    duration: '0:42',
+    aspectRatio: 'portrait',
+    videoUrl: 'https://youtube.com/shorts/NoxGPNy0eGM',
+    description:
+      "High-energy short-form ranking edit capturing IShowSpeed's funniest reactions at the Apple Event, featuring snappy comedic pacing, dynamic punch-in zooms, animated graphics, and synchronized sound effects.",
+    tools: ['DaVinci Resolve'],
+    role: 'Video Editor & Motion Designer',
+    focus: 'Comedic Pacing, Dynamic Punch-In Zooms & SFX Sync',
+    thumbnail: 'https://img.youtube.com/vi/NoxGPNy0eGM/maxresdefault.jpg',
+    fallbackPoster: createEditorialPoster("RANKING SPEED'S MOMENTS", 'Shorts Ranking Edit', '2026', '#2563EB', 'video', 'portrait'),
+    details: [
+      "Fast-paced ranking format highlighting IShowSpeed's most memorable and humorous moments at the Apple Event",
+      'Precision comedic timing with punch-in camera zooms, kinetic subtitle styling, and audio-reactive sound effect stingers',
+      'Engineered for maximum audience retention with vertical 9:16 framing tailored for YouTube Shorts',
+    ],
+  },
+  {
+    id: 'vid-06',
+    number: '06',
+    title: 'RANKING BEST WHITE CHICKS MEMES',
+    category: 'Motion / Video',
+    videoCategory: 'SHORTS',
+    year: '2026',
+    duration: '0:45',
+    aspectRatio: 'portrait',
+    videoUrl: 'https://youtube.com/shorts/7yDqq-SfyX0',
+    description:
+      'High-retention short-form ranking video showcasing the most iconic meme moments from White Chicks, edited with sharp comedic timing, dynamic punch-ins, text overlays, and synchronized sound effects.',
+    tools: ['DaVinci Resolve'],
+    role: 'Video Editor & Motion Designer',
+    focus: 'Comedic Timing, Motion Overlays & Retention Pacing',
+    thumbnail: 'https://img.youtube.com/vi/7yDqq-SfyX0/maxresdefault.jpg',
+    fallbackPoster: createEditorialPoster('WHITE CHICKS MEME RANKING', 'Shorts Ranking Edit', '2026', '#2563EB', 'video', 'portrait'),
+    details: [
+      'Dynamic short-form countdown format ranking the most viral comedy scenes and meme moments from White Chicks',
+      'Executed punchy visual pacing with precision jump cuts, camera punch-in zooms, and synchronized comedic SFX',
+      'Edited, styled, and color-balanced entirely in DaVinci Resolve with 9:16 vertical framing optimized for short-form retention',
+    ],
+  },
 ];
 
 /**
